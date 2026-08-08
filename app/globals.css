@@ -92,7 +92,8 @@ nav a:hover::after, nav a:focus-visible::after,
 .hero-video {
   object-fit: cover;
   filter: saturate(0.82) contrast(1.08) brightness(0.72);
-  opacity: 0.74;
+  opacity: 0.86;
+  mix-blend-mode: screen;
 }
 
 .hero-scrim {
