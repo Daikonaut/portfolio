@@ -79,7 +79,7 @@ nav a:hover::after, nav a:focus-visible::after,
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
-  background: #080808;
+  background: #080808 url("/visual-04.webp") center 34% / cover no-repeat;
 }
 
 .hero-video, .hero-scrim {
@@ -92,6 +92,7 @@ nav a:hover::after, nav a:focus-visible::after,
 .hero-video {
   object-fit: cover;
   filter: saturate(0.82) contrast(1.08) brightness(0.72);
+  opacity: 0.74;
 }
 
 .hero-scrim {
@@ -172,6 +173,7 @@ nav a:hover::after, nav a:focus-visible::after,
 .selected-card > video {
   width: 100%;
   height: auto;
+  object-fit: cover;
   background: var(--panel);
   border: 1px solid rgba(241, 239, 233, 0.12);
 }
@@ -290,6 +292,7 @@ nav a:hover::after, nav a:focus-visible::after,
 .video-card video {
   width: 100%;
   height: auto;
+  object-fit: cover;
   background: var(--panel);
   border: 1px solid rgba(241, 239, 233, 0.12);
 }
@@ -375,3 +378,4 @@ footer {
   *, *::before, *::after { transition-duration: 0.01ms !important; }
   .hero-video { display: none; }
 }
+
