@@ -44,7 +44,7 @@ function ImageWorkGrid({ works }: { works: ImageItem[] }) {
       {works.map((work) => (
         <article className="media-work-card" key={work.src}>
           <figure className="asset-card">
-            <img src={work.src} alt={work.alt} loading="lazy" decoding="async" />
+            <img src={work.src} alt={work.alt} loading="eager" decoding="async" />
           </figure>
           <WorkCaption index={work.index} title={work.title} />
         </article>
@@ -76,7 +76,7 @@ export default function Home() {
       </header>
 
       <section className="hero" id="top">
-        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
+        <video className="hero-video" autoPlay muted loop playsInline preload="auto" poster="/visual-04.webp" aria-hidden="true">
           <source src="/daikonaut-hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-scrim" aria-hidden="true" />
@@ -104,7 +104,7 @@ export default function Home() {
         </div>
         <div className="selected-grid">
           <article className="selected-card selected-card--wide">
-            <video autoPlay muted loop playsInline preload="metadata">
+            <video autoPlay muted loop playsInline preload="auto" poster="/visual-09.webp">
               <source src="/project-projection.mp4" type="video/mp4" />
             </video>
             <div><span>01</span><h2>投影交互设计</h2><p>AIGC / INTERACTION</p></div>
@@ -129,13 +129,13 @@ export default function Home() {
         <SectionTitle id="aigc" index="02" title="AIGC" english="AI-GENERATED CONTENT" />
         <div className="video-grid">
           <article className="video-card">
-            <video controls playsInline preload="metadata">
+            <video controls playsInline preload="metadata" poster="/visual-09.webp">
               <source src="/project-projection.mp4" type="video/mp4" />
             </video>
             <div><span>01</span><h3>交互设计</h3></div>
           </article>
           <article className="video-card">
-            <video controls playsInline preload="metadata">
+            <video controls playsInline preload="metadata" poster="/visual-10.webp">
               <source src="/aigc-robo-neo.mp4" type="video/mp4" />
             </video>
             <div><span>02</span><h3>美图旗下产品 RoboNeo 宣传视频</h3></div>
@@ -157,12 +157,12 @@ export default function Home() {
         <div className="asset-grid asset-grid--mixed">
           {brandImages.map((work) => (
             <article className="media-work-card" key={work.src}>
-              <figure className="asset-card"><img src={work.src} alt={work.alt} loading="lazy" decoding="async" /></figure>
+              <figure className="asset-card"><img src={work.src} alt={work.alt} loading="eager" decoding="async" /></figure>
               <WorkCaption index={work.index} title={work.title} />
             </article>
           ))}
           <article className="media-work-card">
-            <video className="mixed-video" controls playsInline preload="metadata">
+            <video className="mixed-video" controls playsInline preload="metadata" poster="/culture-14.webp">
               <source src="/brand-jewelry-concept.mp4" type="video/mp4" />
             </video>
             <WorkCaption index="03" title="珠宝类视觉概念设计" />
@@ -190,3 +190,4 @@ export default function Home() {
     </main>
   );
 }
+
