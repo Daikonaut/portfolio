@@ -18,6 +18,15 @@ const visualWorks: ImageItem[] = [
   { index: "10", title: "Fanmade 自制海报", src: "/visual-10.webp", alt: "Fanmade 自制海报之五" },
 ];
 
+const artWorks: ImageItem[] = [
+  { index: "01", title: "Miria 概念美术设计", src: "/art-01.jpg", alt: "Miria 概念美术设计：荒野中的人物" },
+  { index: "02", title: "Miria 概念美术设计", src: "/art-02.jpg", alt: "Miria 概念美术设计：月下峡谷" },
+  { index: "03", title: "Miria 概念美术设计", src: "/art-03.jpg", alt: "Miria 概念美术设计：灰色荒原" },
+  { index: "04", title: "Miria 概念美术设计", src: "/art-04.jpg", alt: "Miria 概念美术设计：现代建筑空间" },
+  { index: "05", title: "Miria 概念美术设计", src: "/art-05.jpg", alt: "Miria 概念美术设计：森林与机械生物" },
+  { index: "06", title: "Miria 概念美术设计", src: "/art-06.jpg", alt: "Miria 概念美术设计：玻璃建筑空间" },
+];
+
 const brandImages: ImageItem[] = [
   { index: "01", title: "霸王茶姬活动广告 KV 合成", src: "/brand-11.webp", alt: "霸王茶姬活动广告 KV 竖版" },
   { index: "02", title: "霸王茶姬活动广告 KV 合成", src: "/brand-12.webp", alt: "霸王茶姬活动广告 KV 横版" },
@@ -38,9 +47,9 @@ function WorkCaption({ index, title }: { index: string; title: string }) {
   );
 }
 
-function ImageWorkGrid({ works }: { works: ImageItem[] }) {
+function ImageWorkGrid({ works, className = "" }: { works: ImageItem[]; className?: string }) {
   return (
-    <div className="asset-grid">
+    <div className={`asset-grid ${className}`.trim()}>
       {works.map((work) => (
         <article className="media-work-card" key={work.src}>
           <figure className="asset-card">
@@ -125,8 +134,13 @@ export default function Home() {
         <ImageWorkGrid works={visualWorks} />
       </section>
 
+      <section className="portfolio-section section-shell" aria-labelledby="art">
+        <SectionTitle id="art" index="02" title="美术设计" english="ART DESIGN" />
+        <ImageWorkGrid works={artWorks} className="asset-grid--art" />
+      </section>
+
       <section className="portfolio-section section-shell" aria-labelledby="aigc">
-        <SectionTitle id="aigc" index="02" title="AIGC" english="AI-GENERATED CONTENT" />
+        <SectionTitle id="aigc" index="03" title="AIGC" english="AI-GENERATED CONTENT" />
         <div className="video-grid">
           <article className="video-card">
             <video controls playsInline preload="auto">
@@ -144,7 +158,7 @@ export default function Home() {
       </section>
 
       <section className="portfolio-section section-shell" aria-labelledby="planning">
-        <SectionTitle id="planning" index="03" title="创意策划" english="CREATIVE PLANNING" />
+        <SectionTitle id="planning" index="04" title="创意策划" english="CREATIVE PLANNING" />
         <article className="planning-card">
           <p>01 / VISUAL PLANNING</p>
           <h3>黄霄云 2025 巡演视觉策划</h3>
@@ -153,7 +167,7 @@ export default function Home() {
       </section>
 
       <section className="portfolio-section section-shell" aria-labelledby="advertising">
-        <SectionTitle id="advertising" index="04" title="品牌广告" english="BRAND ADVERTISING" />
+        <SectionTitle id="advertising" index="05" title="品牌广告" english="BRAND ADVERTISING" />
         <div className="asset-grid asset-grid--mixed">
           {brandImages.map((work) => (
             <article className="media-work-card" key={work.src}>
@@ -171,7 +185,7 @@ export default function Home() {
       </section>
 
       <section className="portfolio-section section-shell" aria-labelledby="culture">
-        <SectionTitle id="culture" index="05" title="文创设计" english="CULTURAL &amp; CREATIVE DESIGN" />
+        <SectionTitle id="culture" index="06" title="文创设计" english="CULTURAL &amp; CREATIVE DESIGN" />
         <ImageWorkGrid works={cultureWorks} />
       </section>
 

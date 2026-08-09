@@ -241,6 +241,7 @@ nav a:hover::after, nav a:focus-visible::after,
 
 .asset-grid--1 { grid-template-columns: minmax(0, 0.67fr); }
 .asset-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.asset-grid--art { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .asset-card {
   overflow: hidden;
@@ -342,7 +343,7 @@ footer {
   .selected-grid { grid-template-columns: 1fr; }
   .selected-card--wide { grid-column: auto; }
   .section-title { min-height: 170px; margin-bottom: 34px; grid-template-columns: 46px 1fr; }
-  .section-title p { display: none; }
+  .section-title p { grid-column: 2; grid-row: 2; justify-self: start; }
   .asset-grid, .asset-grid--1, .asset-grid--2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 22px;
